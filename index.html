@@ -9,5 +9,24 @@
 </head>
 <body>
     <h1>Validación de un Formulario de Registro con Zod</h1>
+    <h1>Registro de Usuario</h1>
+    <form id="registerForm">
+        <div id="nameDiv">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" placeholder="Tu nombre">
+            <p id="nameError" style="color: red;"></p>
+        </div>
+        <div id="emailDiv">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" placeholder="Tu correo">
+            <p id="emailError" style="color: red;"></p>
+        </div>
+        <div id="passwordDiv">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" placeholder="Contraseña">
+            <p id="passwordError" style="color: red;"></p>
+        </div>
+        <button type="submit">Registrar</button>
+    </form>
 </body>
 </html>
