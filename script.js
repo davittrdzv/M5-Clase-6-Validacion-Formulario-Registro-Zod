@@ -10,12 +10,16 @@ const registerSchema = z.object({
 
 document.getElementById("registerForm").addEventListener("submit", (event) => {
   event.preventDefault();
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
   
   // Capturamos los valores ingresados
   const formData = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    password: document.getElementById("password").value,
+    name: name.value,
+    email: email.value,
+    password: password.value,
   };
 
   const nameError = document.getElementById('nameError');
@@ -29,6 +33,9 @@ document.getElementById("registerForm").addEventListener("submit", (event) => {
   try {
     registerSchema.parse(formData);
     alert("¡Registro exitoso!");
+    name.value = '';
+    email.value = '';
+    password.value = '';
   } catch (error) {
     error.errors.forEach(e => {
         if (e.path[0] === 'name') {
